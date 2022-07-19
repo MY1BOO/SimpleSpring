@@ -1,0 +1,44 @@
+package com.qj.spring.framework.webmvc.servlet;
+
+import java.lang.reflect.Method;
+import java.util.regex.Pattern;
+
+/**
+ * @author qiujun
+ * @create 2021-12-01-16:41
+ */
+public class HandlerMapping {
+    private Object controller;     //保存方法对应的Controller实例对象
+    private Method method;          //保存映射的方法
+    private Pattern pattern;        //保存URL
+
+    public HandlerMapping(Pattern pattern,Object controller, Method method) {
+        this.controller = controller;
+        this.method = method;
+        this.pattern = pattern;
+    }
+
+    public Object getController() {
+        return controller;
+    }
+
+    public void setController(Object controller) {
+        this.controller = controller;
+    }
+
+    public Method getMethod() {
+        return method;
+    }
+
+    public void setMethod(Method method) {
+        this.method = method;
+    }
+
+    public Pattern getPattern() {
+        return pattern;
+    }
+
+    public void setPattern(Pattern pattern) {
+        this.pattern = pattern;
+    }
+}
